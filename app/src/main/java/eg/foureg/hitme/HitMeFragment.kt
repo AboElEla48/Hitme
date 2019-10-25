@@ -48,6 +48,7 @@ class HitMeFragment : Fragment() {
             hit_me_target_text_view.text = target.toString()
         })
 
+        // Handle click on generate new score target
         disposables.add(RxView.clicks(hit_me_generate_target_btn).subscribe {
             viewModel.generateNewTarget()
         })
@@ -63,21 +64,4 @@ class HitMeFragment : Fragment() {
             }
     }
 
-
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         *
-         * @return A new instance of fragment HitMeFragment.
-         */
-        @JvmStatic
-        fun newInstance() =
-            HitMeFragment().apply {
-                arguments = Bundle().apply {
-
-                }
-            }
-    }
 }
