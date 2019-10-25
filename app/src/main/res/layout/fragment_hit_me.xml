@@ -22,7 +22,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBaseline_toBaselineOf="@id/hit_me_generate_target_btn"
-            android:text="@string/txt_initial_score"
+            android:text="@string/txt_zero_val"
     />
 
     <SeekBar
@@ -52,12 +52,23 @@
     <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/hit_me_score_text_view"
-            style="@style/style_hit_me_score_text"
+            android:id="@+id/hit_me_seek_score_text_view"
+            style="@style/hit_me_seek_score_text_view"
             app:layout_constraintTop_toBottomOf="@id/hit_me_btn"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:text="@string/txt_initial_score"
+            android:text="@string/txt_zero_val"
     />
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/hit_me_score_text_view"
+            style="@style/hit_me_seek_score_text_view"
+            app:layout_constraintTop_toBottomOf="@id/hit_me_seek_score_text_view"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:text="@string/txt_initial_score"
+            />
 
 </android.support.constraint.ConstraintLayout>

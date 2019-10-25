@@ -20,8 +20,8 @@ import kotlinx.android.synthetic.main.fragment_hit_me.*
  */
 class HitMeFragment : Fragment() {
 
-    private lateinit var viewModel : HitMeFragViewModel
-    private var disposables : ArrayList<Disposable> = ArrayList()
+    private lateinit var viewModel: HitMeFragViewModel
+    private var disposables: ArrayList<Disposable> = ArrayList()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,13 +44,28 @@ class HitMeFragment : Fragment() {
         viewModel = ViewModelProviders.of(this).get(HitMeFragViewModel::class.java)
 
         // set value of generated target score into target text view
-        viewModel.targetScore.observe(this, Observer { target : Int? ->
+        viewModel.targetScore.observe(this, Observer { target: Int? ->
             hit_me_target_text_view.text = target.toString()
+        })
+
+        // set value of current seek value text view
+        viewModel.currentSeekVal.observe(this, Observer { seekVal: Int? ->
+            hit_me_seek_score_text_view.text = seekVal.toString()
+        })
+
+        // set result trials score counter
+        viewModel.resultScoreStr.observe(this, Observer { str ->
+            hit_me_score_text_view.text = str
         })
 
         // Handle click on generate new score target
         disposables.add(RxView.clicks(hit_me_generate_target_btn).subscribe {
             viewModel.generateNewTarget()
+        })
+
+        // Handle click on hitme
+        disposables.add(RxView.clicks(hit_me_btn).subscribe {
+            viewModel.hitme(hit_me_seek_bar.progress)
         })
 
 
@@ -59,7 +74,7 @@ class HitMeFragment : Fragment() {
     override fun onDestroy() {
         super.onDestroy()
         Observable.fromIterable(disposables)
-            .blockingSubscribe{ item ->
+            .blockingSubscribe { item ->
                 item.dispose()
             }
     }
