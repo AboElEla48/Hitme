@@ -1,6 +1,9 @@
 <resources>
     <string name="app_name">HitMe</string>
-    <string name="txt_initial_score">0</string>
-    <string name="txt_hit_me_btn">Hit Me!</string>
+
+
     <string name="txt_generate_btn">Generate!</string>
+    <string name="txt_hit_me_btn">Hit Me!</string>
+    <string name="txt_zero_val">0</string>
+    <string name="txt_initial_score">0 / 0</string>
 </resources>

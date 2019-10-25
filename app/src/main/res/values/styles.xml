@@ -35,7 +35,7 @@
         <item name="android:paddingHorizontal">30dp</item>
     </style>
 
-    <style name="style_hit_me_score_text">
+    <style name="hit_me_seek_score_text_view">
         <item name="android:layout_marginTop">60dp</item>
         <item name="android:layout_marginEnd">20dp</item>
         <item name="android:paddingHorizontal">30dp</item>
