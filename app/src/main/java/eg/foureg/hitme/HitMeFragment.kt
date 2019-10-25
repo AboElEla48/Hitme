@@ -58,6 +58,10 @@ class HitMeFragment : Fragment() {
             hit_me_score_text_view.text = str
         })
 
+        viewModel.resultScoreColor.observe(this, Observer {  color ->
+            hit_me_seek_score_text_view.setTextColor(color!!)
+        } )
+
         // Handle click on generate new score target
         disposables.add(RxView.clicks(hit_me_generate_target_btn).subscribe {
             viewModel.generateNewTarget()
@@ -65,7 +69,7 @@ class HitMeFragment : Fragment() {
 
         // Handle click on hitme
         disposables.add(RxView.clicks(hit_me_btn).subscribe {
-            viewModel.hitme(hit_me_seek_bar.progress)
+            viewModel.hitme(resources, hit_me_seek_bar.progress)
         })
 
 
