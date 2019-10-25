@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                             xmlns:tools="http://schemas.android.com/tools"
+                                             android:layout_width="match_parent"
+                                             android:layout_height="match_parent"
+                                             xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <SeekBar
+            android:id="@+id/hit_me_seek_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            style="@style/style_hit_me_seek_bar_style"
+            android:max="100" android:progress="0"
+    />
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/hit_me_score_text_view"
+            style="@style/style_hit_me_score_text"
+            app:layout_constraintTop_toBottomOf="@id/hit_me_seek_bar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:text="@string/txt_initial_score"
+    />
+
+    <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/hit_me_btn"
+            style="@style/style_hit_me_btn"
+            app:layout_constraintTop_toBottomOf="@id/hit_me_score_text_view"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:text="@string/txt_hit_me_btn"
+    />
+
+    <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/hit_me_generate_btn"
+            style="@style/style_hit_me_generate_btn"
+            app:layout_constraintTop_toBottomOf="@id/hit_me_btn"
+            app:layout_constraintStart_toStartOf="parent"
+            android:text="@string/txt_generate_btn"
+    />
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/hit_me_target_text_view"
+            style="@style/style_hit_me_generate_target_text"
+            app:layout_constraintTop_toBottomOf="@id/hit_me_btn"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:text="@string/txt_initial_score"
+    />
+
+
+
+</android.support.constraint.ConstraintLayout>
